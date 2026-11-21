@@ -90,6 +90,8 @@
     .venue-map { margin:26px 0 0; border:1px solid var(--line); border-radius:8px; background:var(--warm); }
     .venue-map iframe { display:block; width:100%; height:clamp(280px,70vw,370px); border:0; border-radius:7px; }
     .venue-map iframe:focus-visible { outline:2px solid var(--rose); outline-offset:4px; }
+    .venue-route { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:44px; margin-top:18px; padding:10px 16px; border:1px solid #bca89a; border-radius:6px; color:#625348; text-decoration:none; font-size:13px; transition:background .2s,color .2s; }
+    .venue-route:hover { background:#625348; color:#fff; }
     .program { padding-top:106px; padding-bottom:110px; background:#f6f0e8; }
     .timeline { max-width:347px; margin:52px auto 0; text-align:left; }
     .timeline-item { display:grid; grid-template-columns:64px 18px 1fr; gap:10px; min-height:88px; }
@@ -265,6 +267,10 @@
           loading="lazy"
         ></iframe>
       </div>
+      <a class="venue-route" id="venue-route" href="https://yandex.ru/maps/?rtext=~40.162724%2C69.490921" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-8-8 18-2.5-7.5L3 11Z"/></svg>
+        <span data-t="routeButton">Масир дар Яндекс Харитаҳо</span>
+      </a>
     </section>
 
     <section class="section program" id="program">
@@ -363,6 +369,7 @@
         "venueLabel": "Ҷойи баргузорӣ",
         "venueTitle": "Шуморо дар ҷашнамон интизорем",
         "mapTitle": "Ҷойи тарабхона дар OpenStreetMap",
+        "routeButton": "Масир дар Яндекс Харитаҳо",
         "programLabel": "Рӯзи тӯй",
         "programTitle": "Барномаи тӯй",
         "step1": "Нахор",
@@ -437,6 +444,7 @@
         "venueLabel": "To‘y manzili",
         "venueTitle": "Sizni bayramimizda<br>kutamiz",
         "mapTitle": "Restoran joylashuvi OpenStreetMap xaritasida",
+        "routeButton": "Yandex Xaritalarda yo‘nalish",
         "programLabel": "Bizning kunimiz",
         "programTitle": "Bayram<br>dasturi",
         "step1": "Нахор",
