@@ -84,16 +84,12 @@
     .calendar-days { display:grid; grid-template-columns:repeat(7,1fr); gap:7px 0; }
     .calendar-days span { height:32px; display:flex; align-items:center; justify-content:center; font:400 14px var(--serif); color:#71685d; }
     .calendar-days span.active { color:#fff; background:#a67f72; border-radius:50%; font-weight:600; box-shadow:0 0 0 4px #a67f7216; }
-    .venue-section { background:#f9f6f0; padding-bottom:0; }
+    .venue-section { background:#f9f6f0; padding-bottom:64px; }
     .venue-section .venue-name { font:italic 33px var(--serif); margin:30px auto 6px; color:#7c6f65; }
     .venue-section .venue-sub { font-size:12px; color:#95897e; line-height:1.8; }
-    .venue-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:24px auto 56px; }
-    .venue-section .venue-action { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:13px 15px; border:1px solid #bca89a; background:none; color:#806c62; text-decoration:none; font-size:11px; letter-spacing:.1em; text-transform:uppercase; transition:background .2s,color .2s; }
-    .venue-section .venue-action[href]:hover { background:#806c62; color:white; }
-    .venue-img { margin:0 -35px; height:345px; background:#a79b8a; position:relative; overflow:hidden; }
-    .venue-img:before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1100&q=85') center/cover; filter:saturate(.75); }
-    .venue-img:after { content:''; position:absolute; inset:0; background:#4c45332b; }
-    .venue-img .corner-note { position:absolute; bottom:27px; left:31px; z-index:1; color:white; font:italic 25px var(--serif); }
+    .venue-map { margin:26px 0 0; border:1px solid var(--line); border-radius:8px; background:var(--warm); }
+    .venue-map iframe { display:block; width:100%; height:clamp(280px,70vw,370px); border:0; border-radius:7px; }
+    .venue-map iframe:focus-visible { outline:2px solid var(--rose); outline-offset:4px; }
     .program { padding-top:106px; padding-bottom:110px; background:#f6f0e8; }
     .timeline { max-width:347px; margin:52px auto 0; text-align:left; }
     .timeline-item { display:grid; grid-template-columns:64px 18px 1fr; gap:10px; min-height:88px; }
@@ -188,7 +184,6 @@
       .hero-middle { padding-top:35px; }
       h1 { font-size:clamp(62px,17.5vw,94px); }
       .section { padding-left:28px; padding-right:28px; }
-      .venue-img { margin-left:-28px; margin-right:-28px; }
       .date-hero .day { font-size:114px; }
     }
     @media (max-width:365px) { .hero-middle .intro { letter-spacing:.25em; } .date-hero .day { font-size:100px; } .date-side .month { font-size:27px; } .counters { gap:0; } .counter .number { font-size:41px; } }
@@ -262,11 +257,14 @@
       <div class="ornament reveal"><span class="symbol">❦</span></div>
       <div class="venue-name reveal" data-t="venueName">Тарабхонаи ҷашни арӯсӣ</div>
       <div class="venue-sub reveal">40.162724, 69.490921</div>
-      <div class="venue-actions reveal">
-        <a class="venue-action" id="map-link" href="https://yandex.ru/maps?whatshere%5Bzoom%5D=14&amp;whatshere%5Bpoint%5D=69.490921,40.162724&amp;si=bqm04ppfdve4g5ajjx2a53392r" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-t="mapButton">Яндекс Харитаҳо</span></a>
-        <a class="venue-action" href="https://www.openstreetmap.org/?mlat=40.162724&amp;mlon=69.490921#map=17/40.162724/69.490921" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Zm6-3v15m6-12v15"/></svg><span>OpenStreetMap</span></a>
+      <div class="venue-map">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=69.4862%2C40.1593%2C69.4956%2C40.1661&amp;layer=mapnik&amp;marker=40.162724%2C69.490921"
+          title="Ҷойи тарабхона дар OpenStreetMap"
+          id="venue-map-frame"
+          loading="lazy"
+        ></iframe>
       </div>
-      <div class="venue-img motion-photo"><div class="corner-note" data-t="venuePhoto">Ҷашни арӯсӣ</div></div>
     </section>
 
     <section class="section program" id="program">
@@ -364,8 +362,7 @@
         ],
         "venueLabel": "Ҷойи баргузорӣ",
         "venueTitle": "Шуморо дар ҷашнамон интизорем",
-        "mapButton": "Яндекс Харитаҳо",
-        "venuePhoto": "Ҷашни арӯсӣ",
+        "mapTitle": "Ҷойи тарабхона дар OpenStreetMap",
         "programLabel": "Рӯзи тӯй",
         "programTitle": "Барномаи тӯй",
         "step1": "Нахор",
@@ -439,8 +436,7 @@
         ],
         "venueLabel": "To‘y manzili",
         "venueTitle": "Sizni bayramimizda<br>kutamiz",
-        "mapButton": "Yandex Xaritalar",
-        "venuePhoto": "To‘y bazmi",
+        "mapTitle": "Restoran joylashuvi OpenStreetMap xaritasida",
         "programLabel": "Bizning kunimiz",
         "programTitle": "Bayram<br>dasturi",
         "step1": "Нахор",
@@ -491,6 +487,7 @@
       lang = newLang;
       document.documentElement.lang = newLang;
       document.title = t[lang].pageTitle;
+      qs('#venue-map-frame').title = t[lang].mapTitle;
       qs('meta[name="description"]').content = t[lang].pageDescription;
       document.querySelectorAll('[data-label]').forEach(el => el.setAttribute('aria-label', t[lang][el.dataset.label]));
       qs('#calendar-days .active').setAttribute('aria-label', t[lang].calendarDay);
