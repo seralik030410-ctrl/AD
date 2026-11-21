@@ -52,8 +52,7 @@
     .hero-bottom p { font:italic 21px var(--serif); margin:0 0 40px; }
     .scroll-hint { display:inline-flex; flex-direction:column; gap:13px; align-items:center; text-decoration:none; font-size:9px; letter-spacing:.31em; text-transform:uppercase; color:#fff9; }
     .scroll-hint i { height:45px; width:1px; background:#fff9; position:relative; overflow:hidden; }
-    .scroll-hint i::after { content:''; position:absolute; left:0; top:-20px; width:1px; height:25px; background:white; animation:scrollflow 2s infinite; }
-    @keyframes scrollflow { to { top:70px; } }
+    .scroll-hint i::after { content:''; position:absolute; left:0; top:0; width:1px; height:25px; background:white; transform:translateY(-25px); }
     .section { padding:96px 35px; text-align:center; position:relative; }
     .section > * { position:relative; z-index:1; }
     .ornament { display:flex; align-items:center; justify-content:center; gap:17px; color:#af9b83; margin:23px auto; }
@@ -143,8 +142,44 @@
     .final-section .footer-date { color:#948174; font-size:11px; letter-spacing:.21em; }
     .final-section .footer-line { width:48px; height:1px; background:#bfac9e; margin:33px auto; }
     .final-section .footer-small { font-size:10px; color:#a8998b; letter-spacing:.22em; text-transform:uppercase; }
-    .js .reveal { opacity:0; transform:translateY(24px); transition:opacity .85s ease,transform .85s ease; }
-    .js .reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media (prefers-reduced-motion:no-preference) {
+      :root { --motion-ease:cubic-bezier(.23,1,.32,1); }
+      .hero::before { animation:hero-photo 2.2s var(--motion-ease) both; }
+      .hero-top { animation:arrive .65s var(--motion-ease) both; }
+      .hero-middle .intro { animation:arrive .7s var(--motion-ease) .08s both; }
+      .hero-middle h1 span { animation:arrive .86s var(--motion-ease) .17s both; }
+      .hero-middle h1 .amp { animation-delay:.26s; }
+      .hero-middle h1 span:last-child { animation-delay:.34s; }
+      .hero-middle .line { animation:draw-line .65s var(--motion-ease) .37s both; }
+      .hero-middle .date { animation:arrive .7s var(--motion-ease) .43s both; }
+      .hero-bottom { animation:arrive .7s var(--motion-ease) .52s both; }
+      .scroll-hint i::after { animation:scrollflow 1.8s ease-out 1s 3; }
+
+      .js .reveal:not(.is-visible):not(:focus-within) { opacity:0; }
+      .js .reveal.is-visible { animation:arrive .7s var(--motion-ease) both; }
+      .js .reveal.is-visible:focus-within { animation:none; }
+      .js .timeline.is-visible { animation:none; }
+      .js .timeline.is-visible .timeline-item { animation:arrive .72s var(--motion-ease) both; }
+      .js .timeline.is-visible .timeline-item:nth-child(2) { animation-delay:.12s; }
+      .js .timeline.is-visible .timeline-item:nth-child(3) { animation-delay:.24s; }
+      .js .timeline.is-visible .timeline-rule { transform-origin:top; animation:draw-rail 550ms var(--motion-ease) both; }
+      .js .timeline.is-visible .timeline-item:nth-child(2) .timeline-rule { animation-delay:.12s; }
+      .js .motion-photo.is-visible::before { animation:photo-settle 1.6s var(--motion-ease) both; }
+      .js .motion-photo.is-visible .feature-text { animation:arrive .85s var(--motion-ease) both; }
+      .js .calendar.is-visible .active { animation:calendar-mark .75s var(--motion-ease) .22s both; }
+      .music-control[data-playing="true"] [aria-hidden] { animation:music-note .45s var(--motion-ease); }
+
+      @keyframes arrive { from { opacity:0; transform:translateY(15px); } to { opacity:1; transform:translateY(0); } }
+      @keyframes hero-photo { from { transform:scale(1.065); } to { transform:scale(1.01); } }
+      @keyframes photo-settle { from { transform:scale(1.06); } to { transform:scale(1); } }
+      @keyframes draw-line { from { opacity:0; transform:scaleX(.1); } to { opacity:1; transform:scaleX(1); } }
+      @keyframes draw-rail { from { transform:scaleY(0); } to { transform:scaleY(1); } }
+      @keyframes scrollflow { to { transform:translateY(45px); } }
+      @keyframes calendar-mark { from { transform:scale(.8); box-shadow:0 0 0 0 #a67f7245; } to { transform:scale(1); box-shadow:0 0 0 4px #a67f7216; } }
+      @keyframes music-note { 50% { transform:translateY(-3px) rotate(-12deg); } }
+      .music-control { transition:transform .15s var(--motion-ease); }
+      .music-control:active { transform:scale(.97); }
+    }
     @media (max-width:1040px) { .side-copy { display:none; } }
     @media (max-width:550px) {
       body { background:var(--paper); }
@@ -159,7 +194,7 @@
       .date-hero .day { font-size:114px; }
     }
     @media (max-width:365px) { .hero-middle .intro { letter-spacing:.25em; } .date-hero .day { font-size:100px; } .date-side .month { font-size:27px; } .counters { gap:0; } .counter .number { font-size:41px; } }
-    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .scroll-hint i::after { animation:none; } .js .reveal { opacity:1; transform:none; transition:none; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
     .music-control { position:fixed; inset:auto max(20px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) auto; z-index:10; display:flex; gap:8px; align-items:center; min-height:44px; padding:8px 15px; border:1px solid #f7eee2; border-radius:24px; background:#625348; color:#fff; font-size:13px; box-shadow:0 3px 18px #392c2038; }
     .music-status { position:fixed; right:20px; bottom:calc(max(20px,env(safe-area-inset-bottom)) + 49px); z-index:10; max-width:240px; padding:6px 10px; border-radius:8px; background:#625348; color:#fff; font-size:13px; }
     .music-status:empty { display:none; }
@@ -204,7 +239,7 @@
       <svg class="leaf-bottom" viewBox="0 0 190 230" fill="none" stroke="#a3a18a" stroke-width="1.1" aria-hidden="true"><path d="M14 223C68 155 70 76 128 0"/><path d="M57 158C24 139 13 115 20 99c27 4 40 24 37 59ZM79 117c-29-18-27-47-16-61 19 15 27 35 16 61ZM107 62C88 43 92 19 103 7c15 22 17 37 4 55ZM71 139c10-36 32-47 57-48-8 26-23 42-57 48ZM90 95c14-30 31-40 52-39-10 24-27 36-52 39Z"/></svg>
     </section>
 
-    <div class="feature-photo">
+    <div class="feature-photo motion-photo">
       <div class="feature-text"><em data-t="photoQuote">Як муҳаббат.<br>Ду тақдир.</em><small data-t="photoCaption">Оғози роҳи муштараки мо</small></div>
     </div>
 
@@ -227,17 +262,17 @@
       <div class="venue-name reveal" data-t="venueTba">Ҷойи баргузории ҷашн</div>
       <div class="venue-sub reveal" data-t="venueDescription">Нишониро баъдтар хабар медиҳем.</div>
       <a class="venue-action reveal" id="map-link" aria-disabled="true"><span data-t="mapButton">Пайванди харита баъдтар илова мешавад</span><span aria-hidden="true">↗</span></a>
-      <div class="venue-img"><div class="corner-note" data-t="venuePhoto">Ҷашни арӯсӣ</div></div>
+      <div class="venue-img motion-photo"><div class="corner-note" data-t="venuePhoto">Ҷашни арӯсӣ</div></div>
     </section>
 
     <section class="section program" id="program">
       <div class="eyebrow reveal" data-t="programLabel">Рӯзи тӯй</div>
       <h2 class="reveal" data-t="programTitle">Барномаи тӯй</h2>
       <div class="ornament reveal"><span class="symbol">✧</span></div>
-      <div class="timeline">
-        <div class="timeline-item reveal"><time class="timeline-num" datetime="08:00">08:00</time><div class="timeline-rail"><div class="timeline-dot"></div><div class="timeline-rule"></div></div><div class="timeline-copy"><h3 data-t="step1">Нахор</h3></div></div>
-        <div class="timeline-item reveal"><time class="timeline-num" datetime="12:00">12:00</time><div class="timeline-rail"><div class="timeline-dot"></div><div class="timeline-rule"></div></div><div class="timeline-copy"><h3 data-t="step2">ЗАГС</h3></div></div>
-        <div class="timeline-item reveal"><time class="timeline-num" datetime="16:00">16:00</time><div class="timeline-rail"><div class="timeline-dot"></div><div class="timeline-rule"></div></div><div class="timeline-copy"><h3 data-t="step3">Ҷашни арӯсӣ</h3></div></div>
+      <div class="timeline reveal">
+        <div class="timeline-item"><time class="timeline-num" datetime="08:00">08:00</time><div class="timeline-rail"><div class="timeline-dot"></div><div class="timeline-rule"></div></div><div class="timeline-copy"><h3 data-t="step1">Нахор</h3></div></div>
+        <div class="timeline-item"><time class="timeline-num" datetime="12:00">12:00</time><div class="timeline-rail"><div class="timeline-dot"></div><div class="timeline-rule"></div></div><div class="timeline-copy"><h3 data-t="step2">ЗАГС</h3></div></div>
+        <div class="timeline-item"><time class="timeline-num" datetime="16:00">16:00</time><div class="timeline-rail"><div class="timeline-dot"></div><div class="timeline-rule"></div></div><div class="timeline-copy"><h3 data-t="step3">Ҷашни арӯсӣ</h3></div></div>
       </div>
     </section>
 
@@ -286,8 +321,8 @@
     </section>
 
     <footer class="final-section">
-      <div class="monogram" aria-hidden="true">A <i>&</i> S</div>
-      <div class="farewell" data-t="farewell">Бо муҳаббат<br>интизори шумоем!</div>
+      <div class="monogram reveal" aria-hidden="true">A <i>&</i> S</div>
+      <div class="farewell reveal" data-t="farewell">Бо муҳаббат<br>интизори шумоем!</div>
       <div class="footer-date" data-t="footerDate">26 ДЕКАБРИ 2026</div>
       <div class="footer-line"></div>
       <div class="footer-small">Asadbek & Sevara</div>
@@ -542,7 +577,7 @@
       const result=qs('#form-result');
       qs('#prepared-message').textContent=messageText();
       result.classList.add('show');
-      result.scrollIntoView({behavior:'smooth',block:'nearest'});
+      result.scrollIntoView({block:'nearest'});
     }
     document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>applyLocale(button.dataset.lang)));
     qs('#rsvp-form').addEventListener('submit',async event=>{
@@ -560,7 +595,7 @@
           r.querySelector('p').textContent=t[lang].sentDesc;
           qs('#prepared-message').hidden=true;
           qs('#copy-response').hidden=true;
-          r.scrollIntoView({behavior:'smooth',block:'nearest'});
+          r.scrollIntoView({block:'nearest'});
         } catch(error) { prepareResponse(); qs('#form-result p').textContent=t[lang].sendError; }
         finally { button.disabled=false; }
       } else prepareResponse();
@@ -574,6 +609,7 @@
     });
     const music = qs('#wedding-music');
     function updateMusicLabel() {
+      qs('#music-toggle').dataset.playing = String(!music.paused);
       qs('#music-label').textContent = music.paused ? t[lang].musicPlay : t[lang].musicPause;
     }
     music.addEventListener('play', updateMusicLabel);
@@ -595,11 +631,11 @@
     applyLocale(new URLSearchParams(location.search).get('lang') === 'uz' ? 'uz' : 'tg');
     tick();
     setInterval(tick, 1000);
-    document.documentElement.classList.add('js');
     if('IntersectionObserver' in window) {
+      document.documentElement.classList.add('js');
       const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{ if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);} }),{threshold:.08,rootMargin:'0px 0px 20px 0px'});
-      document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-    } else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));
+      document.querySelectorAll('.reveal, .motion-photo').forEach(el=>observer.observe(el));
+    }
   </script>
 </body>
 </html>
