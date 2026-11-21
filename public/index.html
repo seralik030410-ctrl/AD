@@ -1,0 +1,605 @@
+<!doctype html>
+<html lang="tg">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5f0e9" />
+  <meta name="description" content="Даъватнома ба тӯйи Асадбек ва Севара. 26 декабри соли 2026." />
+  <meta property="og:title" content="Асадбек ва Севара | 26 декабри 2026" />
+  <meta property="og:description" content="Даъватнома ба тӯйи Асадбек ва Севара. 26 декабри соли 2026." />
+  <meta property="og:type" content="website" />
+  <title>Асадбек ва Севара | 26 декабри 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root { --paper:#f8f5ef; --warm:#eee7dc; --shell:#e7ded2; --ink:#433b34; --muted:#8c8275; --rose:#a77c6f; --rose-light:#e6cec7; --olive:#6c7460; --line:#d8cdc0; --serif:'Cormorant Garamond',Georgia,'Times New Roman',serif; --sans:'Manrope',Arial,sans-serif; }
+    *,*::before,*::after { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:radial-gradient(circle at 17% 18%,#f2e9dd 0%,transparent 34%),radial-gradient(circle at 81% 83%,#e6d8cb 0%,transparent 36%),#e3dbd0; color:var(--ink); font-family:var(--sans); font-weight:400; -webkit-font-smoothing:antialiased; }
+    button,input,textarea { font:inherit; }
+    button { cursor:pointer; }
+    button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible { outline:2px solid var(--rose); outline-offset:4px; }
+    a { color:inherit; }
+    .page { width:min(100%,550px); position:relative; margin:auto; background:var(--paper); box-shadow:0 18px 85px #392c2021; overflow:hidden; }
+    .side-copy { position:fixed; top:50%; transform:translateY(-50%); width:calc((100vw - 620px)/2); text-align:center; pointer-events:none; z-index:0; }
+    .side-copy.left { left:0; } .side-copy.right { right:0; }
+    .side-copy .vertical { font:400 12px var(--sans); letter-spacing:.42em; text-transform:uppercase; color:#a69b8d; writing-mode:vertical-rl; display:inline-block; }
+    .side-copy.left .vertical { transform:rotate(180deg); }
+    .side-copy .small { margin-top:26px; color:#b9ac9c; font:italic 40px var(--serif); }
+    .eyebrow { color:var(--rose); font-size:10px; font-weight:600; letter-spacing:.32em; text-transform:uppercase; }
+    .language { position:absolute; top:23px; right:24px; z-index:9; display:flex; align-items:center; gap:3px; padding:4px; border:1px solid #fffa; border-radius:30px; backdrop-filter:blur(14px); background:#473a323f; }
+    .language button { border:0; color:#fff9; background:transparent; padding:7px 11px; border-radius:30px; font-size:10px; letter-spacing:.04em; font-weight:600; }
+    .language button[aria-pressed=true] { background:#f8f2ea; color:#655448; }
+    .hero { position:relative; min-height:860px; height:100svh; max-height:1050px; display:flex; flex-direction:column; justify-content:space-between; text-align:center; color:white; isolation:isolate; background:linear-gradient(145deg,#968474,#5e665a 65%,#9b8272); }
+    .hero::before { content:''; position:absolute; inset:0; z-index:-3; background-image:url('https://images.unsplash.com/photo-1741115974561-436d41f2579d?auto=format&fit=crop&w=1200&q=85'); background-size:cover; background-position:55% 52%; filter:saturate(.69) brightness(.72); transform:scale(1.01); }
+    .hero::after { content:''; position:absolute; inset:0; z-index:-2; background:linear-gradient(180deg,#29261f6c 0%,#302c285b 29%,#28251f77 57%,#2d2925b8 100%); }
+    .hero-frame { position:absolute; inset:18px; border:1px solid #fff8; pointer-events:none; z-index:0; }
+    .hero-frame::before,.hero-frame::after { content:'✦'; position:absolute; width:30px; font-size:12px; color:#f4e5d8; background:#6c665b; left:50%; transform:translateX(-50%); }
+    .hero-frame::before { top:-7px; }.hero-frame::after { bottom:-7px; }
+    .hero-top { padding:68px 35px 0; position:relative; z-index:1; }
+    .hero-top .brand { font:italic 27px var(--serif); letter-spacing:.02em; margin-bottom:13px; }
+    .hero-top .brand em { font-style:normal; color:#f2e0c9; }
+    .hero-top .subbrand { font-size:9px; letter-spacing:.4em; text-transform:uppercase; color:#efe9dfd9; }
+    .hero-middle { position:relative; z-index:1; padding:50px 22px 25px; margin-top:17px; }
+    .hero-middle .intro { font-size:10px; letter-spacing:.48em; text-transform:uppercase; font-weight:500; margin-bottom:28px; }
+    h1 { margin:0; font-family:var(--serif); font-size:clamp(64px,14vw,94px); font-weight:300; line-height:.79; letter-spacing:-.055em; text-shadow:0 5px 30px #0003; }
+    h1 span { display:block; }
+    h1 .amp { font-style:italic; font-size:.67em; line-height:1.22; letter-spacing:0; color:#f2dcc9; font-weight:300; }
+    .hero-middle .line { width:50px; height:1px; background:#fff9; margin:33px auto 20px; }
+    .hero-middle .date { font:400 15px var(--serif); letter-spacing:.21em; }
+    .hero-bottom { position:relative; z-index:1; padding:0 30px 49px; }
+    .hero-bottom p { font:italic 21px var(--serif); margin:0 0 40px; }
+    .scroll-hint { display:inline-flex; flex-direction:column; gap:13px; align-items:center; text-decoration:none; font-size:9px; letter-spacing:.31em; text-transform:uppercase; color:#fff9; }
+    .scroll-hint i { height:45px; width:1px; background:#fff9; position:relative; overflow:hidden; }
+    .scroll-hint i::after { content:''; position:absolute; left:0; top:-20px; width:1px; height:25px; background:white; animation:scrollflow 2s infinite; }
+    @keyframes scrollflow { to { top:70px; } }
+    .section { padding:96px 35px; text-align:center; position:relative; }
+    .section > * { position:relative; z-index:1; }
+    .ornament { display:flex; align-items:center; justify-content:center; gap:17px; color:#af9b83; margin:23px auto; }
+    .ornament:before,.ornament:after { content:''; width:43px; height:1px; background:#d5c5b4; }
+    .ornament .symbol { font:25px var(--serif); line-height:1; }
+    h2 { font:400 clamp(43px,10vw,61px)/1.02 var(--serif); letter-spacing:-.035em; margin:13px 0 24px; }
+    .copy { font-size:13px; line-height:2.1; font-weight:400; color:#746c63; margin:0 auto; max-width:370px; }
+    .greeting { background:#faf7f1; padding-top:120px; padding-bottom:112px; }
+    .greeting .salute { font:italic 34px var(--serif); line-height:1.17; margin:0 auto 32px; max-width:360px; }
+    .greeting .signature { font:italic 32px var(--serif); color:#9c8177; margin-top:31px; }
+    .greeting .leaf-top { position:absolute; width:185px; height:220px; left:-56px; top:-80px; transform:rotate(17deg); opacity:.55; }
+    .greeting .leaf-bottom { position:absolute; width:170px; height:230px; right:-62px; bottom:-47px; transform:rotate(202deg); opacity:.48; }
+    .feature-photo { position:relative; height:580px; background:linear-gradient(135deg,#b5a396,#605f58); overflow:hidden; }
+    .feature-photo:before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=85') center/cover; filter:saturate(.55); }
+    .feature-photo:after { content:''; position:absolute; inset:0; background:linear-gradient(to top,#242520b3,transparent 66%); }
+    .feature-photo .feature-text { position:absolute; bottom:56px; text-align:center; width:100%; z-index:1; color:white; padding:0 30px; }
+    .feature-photo .feature-text em { font:italic 42px var(--serif); font-weight:300; line-height:1.03; display:block; }
+    .feature-photo .feature-text small { font-size:9px; letter-spacing:.34em; text-transform:uppercase; display:block; margin-top:22px; color:#fff9; }
+    .date-section { background:#eee7de; padding-top:104px; padding-bottom:110px; }
+    .date-section h2 { margin-bottom:6px; }
+    .date-hero { display:flex; align-items:center; justify-content:center; gap:20px; margin:41px auto 22px; }
+    .date-hero .day { font:300 130px/.74 var(--serif); letter-spacing:-.08em; }
+    .date-hero .date-side { text-align:left; border-left:1px solid #c8b8a6; padding-left:18px; }
+    .date-side .month { font:400 30px/1 var(--serif); }
+    .date-side .year { margin-top:8px; font-size:11px; letter-spacing:.29em; color:var(--muted); }
+    .weekday { margin:0 auto 40px; color:#937f6c; font-size:11px; text-transform:uppercase; letter-spacing:.26em; }
+    .calendar { width:100%; max-width:338px; margin:0 auto; padding:21px 23px 19px; border:1px solid #ccbcae; background:#f6f1eac9; }
+    .calendar-top { display:grid; grid-template-columns:repeat(7,1fr); text-transform:uppercase; font-size:9px; color:#a59a8e; letter-spacing:.06em; margin-bottom:17px; }
+    .calendar-days { display:grid; grid-template-columns:repeat(7,1fr); gap:7px 0; }
+    .calendar-days span { height:32px; display:flex; align-items:center; justify-content:center; font:400 14px var(--serif); color:#71685d; }
+    .calendar-days span.active { color:#fff; background:#a67f72; border-radius:50%; font-weight:600; box-shadow:0 0 0 4px #a67f7216; }
+    .venue-section { background:#f9f6f0; padding-bottom:0; }
+    .venue-section .venue-name { font:italic 33px var(--serif); margin:30px auto 6px; color:#7c6f65; }
+    .venue-section .venue-sub { font-size:12px; color:#95897e; line-height:1.8; }
+    .venue-section .venue-action { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:15px 23px; border:1px solid #bca89a; background:none; color:#806c62; text-decoration:none; font-size:10px; letter-spacing:.2em; text-transform:uppercase; margin:30px auto 56px; transition:background .2s,color .2s; }
+    .venue-section .venue-action[href]:hover { background:#806c62; color:white; }
+    .venue-section .venue-action:not([href]) { opacity:.65; cursor:default; }
+    .venue-img { margin:0 -35px; height:345px; background:#a79b8a; position:relative; overflow:hidden; }
+    .venue-img:before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1100&q=85') center/cover; filter:saturate(.75); }
+    .venue-img:after { content:''; position:absolute; inset:0; background:#4c45332b; }
+    .venue-img .corner-note { position:absolute; bottom:27px; left:31px; z-index:1; color:white; font:italic 25px var(--serif); }
+    .program { padding-top:106px; padding-bottom:110px; background:#f6f0e8; }
+    .timeline { max-width:347px; margin:52px auto 0; text-align:left; }
+    .timeline-item { display:grid; grid-template-columns:64px 18px 1fr; gap:10px; min-height:88px; }
+    .timeline-num { font:italic 22px var(--serif); color:#9e877a; padding-top:2px; }
+    .timeline-rail { display:flex; align-items:center; flex-direction:column; }
+    .timeline-dot { width:8px; height:8px; border:1px solid #a48676; border-radius:50%; margin-top:8px; transform:rotate(45deg); }
+    .timeline-rule { width:1px; flex:1; min-height:46px; background:#d1bcae; margin-top:11px; }
+    .timeline-item:last-child { min-height:0; }
+    .timeline-item:last-child .timeline-rule { display:none; }
+    .timeline-copy h3 { margin:0 0 6px; font:400 27px var(--serif); }
+    .quote-section { padding:102px 40px; text-align:center; background:#7d8274; color:#fff; position:relative; overflow:hidden; }
+    .quote-section:before { content:''; position:absolute; inset:0; opacity:.15; background:radial-gradient(circle at 0% 0%,#f5f1dc 0%,transparent 60%),radial-gradient(circle at 90% 90%,#352f22 0%,transparent 60%); }
+    .quote-section .little { font-size:10px; letter-spacing:.3em; color:#e8dacf; text-transform:uppercase; }
+    .quote-section blockquote { margin:30px auto; max-width:410px; font:italic 36px/1.2 var(--serif); }
+    .quote-section .divider-spark { font-size:29px; color:#e4d3bf; }
+    .countdown-section { background:#f9f5ed; padding-top:105px; padding-bottom:110px; }
+    .counters { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:5px; margin:41px auto 0; max-width:440px; }
+    .counter { text-align:center; }
+    .counter .number { font:300 clamp(44px,11vw,64px)/1 var(--serif); letter-spacing:-.04em; display:block; font-variant-numeric:lining-nums tabular-nums; }
+    .counter .counter-label { display:block; margin-top:13px; font-size:9px; text-transform:uppercase; letter-spacing:.1em; color:#9a8b7e; }
+    .rsvp { background:#e9e0d5; padding-top:105px; padding-bottom:104px; }
+    .rsvp .copy { max-width:342px; }
+    .form { max-width:365px; margin:44px auto 0; text-align:left; }
+    .field-label { display:block; font-size:10px; text-transform:uppercase; letter-spacing:.15em; font-weight:600; color:#796b60; margin-bottom:12px; }
+    .field { width:100%; border:0; border-bottom:1px solid #bcb0a2; border-radius:0; background:transparent; outline:0; color:var(--ink); padding:13px 1px 15px; margin-bottom:34px; font-size:13px; }
+    .field::placeholder { color:#a69b91; }
+    .field:focus { border-bottom-color:#815d52; }
+    textarea.field { resize:vertical; min-height:83px; line-height:1.7; }
+    .choices { display:flex; flex-direction:column; gap:13px; margin:17px 0 37px; }
+    .choice { display:flex; align-items:center; gap:11px; cursor:pointer; font-size:12px; color:#645a51; }
+    .choice input { appearance:none; width:17px; height:17px; border:1px solid #ad9385; border-radius:50%; flex:0 0 17px; display:grid; place-items:center; background:transparent; margin:0; }
+    .choice input:checked:after { content:''; display:block; width:7px; height:7px; border-radius:50%; background:#9a7367; }
+    .form-submit,.copy-response { width:100%; border:0; background:#76675e; color:#fff; padding:20px; text-align:center; font-size:10px; text-transform:uppercase; letter-spacing:.23em; transition:background .2s; }
+    .form-submit:hover,.copy-response:hover { background:#9a7367; }
+    .form-note { font-size:10px; color:#93867c; line-height:1.75; margin:14px 0 0; text-align:center; }
+    .form-result { display:none; text-align:center; margin-top:20px; border:1px solid #bda99a; background:#f6f1e9; padding:23px; }
+    .form-result.show { display:block; }
+    .form-result h3 { font:italic 27px var(--serif); margin:0 0 10px; }
+    .form-result p { font-size:11px; color:#766a61; line-height:1.75; }
+    .prepared-message { text-align:left; white-space:pre-wrap; line-height:1.65; font-size:11px; color:#65584d; padding:15px; background:white; margin:14px 0; overflow-wrap:anywhere; }
+    .copy-response { padding:15px; }
+    .final-section { min-height:465px; background:#f8f4ed; padding:102px 25px 80px; text-align:center; position:relative; }
+    .final-section .monogram { display:inline-flex; align-items:center; justify-content:center; width:115px; height:115px; border:1px solid #c4b09d; border-radius:50%; font:italic 38px var(--serif); color:#aa8575; margin-bottom:38px; }
+    .final-section .monogram i { font-size:.52em; padding:0 4px; }
+    .final-section .farewell { font:italic 44px/1.05 var(--serif); color:#5e544b; margin:0 auto 20px; }
+    .final-section .footer-date { color:#948174; font-size:11px; letter-spacing:.21em; }
+    .final-section .footer-line { width:48px; height:1px; background:#bfac9e; margin:33px auto; }
+    .final-section .footer-small { font-size:10px; color:#a8998b; letter-spacing:.22em; text-transform:uppercase; }
+    .js .reveal { opacity:0; transform:translateY(24px); transition:opacity .85s ease,transform .85s ease; }
+    .js .reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media (max-width:1040px) { .side-copy { display:none; } }
+    @media (max-width:550px) {
+      body { background:var(--paper); }
+      .page { box-shadow:none; }
+      .hero { min-height:710px; height:100svh; }
+      .hero-frame { inset:12px; }
+      .hero-top { padding-top:60px; }
+      .hero-middle { padding-top:35px; }
+      h1 { font-size:clamp(62px,17.5vw,94px); }
+      .section { padding-left:28px; padding-right:28px; }
+      .venue-img { margin-left:-28px; margin-right:-28px; }
+      .date-hero .day { font-size:114px; }
+    }
+    @media (max-width:365px) { .hero-middle .intro { letter-spacing:.25em; } .date-hero .day { font-size:100px; } .date-side .month { font-size:27px; } .counters { gap:0; } .counter .number { font-size:41px; } }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .scroll-hint i::after { animation:none; } .js .reveal { opacity:1; transform:none; transition:none; } }
+    .music-control { position:fixed; inset:auto max(20px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) auto; z-index:10; display:flex; gap:8px; align-items:center; min-height:44px; padding:8px 15px; border:1px solid #f7eee2; border-radius:24px; background:#625348; color:#fff; font-size:13px; box-shadow:0 3px 18px #392c2038; }
+    .music-status { position:fixed; right:20px; bottom:calc(max(20px,env(safe-area-inset-bottom)) + 49px); z-index:10; max-width:240px; padding:6px 10px; border-radius:8px; background:#625348; color:#fff; font-size:13px; }
+    .music-status:empty { display:none; }
+    .footer-small { padding-bottom:14px; }
+  </style>
+</head>
+<body>
+  <aside class="side-copy left" aria-hidden="true"><span class="vertical" data-t="sideLeft">Рӯзи ҷашни мо</span><div class="small">A & S</div></aside>
+  <aside class="side-copy right" aria-hidden="true"><span class="vertical" data-t="sideRight">26 декабри 2026</span><div class="small">✧</div></aside>
+
+  <main class="page">
+    <header class="hero" id="top">
+      <div class="hero-frame" aria-hidden="true"></div>
+      <nav class="language" data-label="languageLabel" aria-label="Интихоби забон">
+        <button type="button" data-lang="tg" lang="tg" aria-pressed="true">Тоҷикӣ</button>
+        <button type="button" data-lang="uz" lang="uz" aria-pressed="false">O‘zbekcha</button>
+      </nav>
+      <div class="hero-top">
+        <div class="brand">A <em>&</em> S</div>
+        <div class="subbrand" data-t="topLabel">Қиссаи муҳаббати мо</div>
+      </div>
+      <div class="hero-middle">
+        <div class="intro" data-t="heroEyebrow">Даъватнома ба тӯй</div>
+        <h1><span data-t="nameA">Асадбек</span><span class="amp">&</span><span data-t="nameB">Севара</span></h1>
+        <div class="line"></div>
+        <div class="date" data-t="heroDate">26 · 12 · 2026</div>
+      </div>
+      <div class="hero-bottom">
+        <p data-t="heroQuote">Оғози зиндагии муштараки мо</p>
+        <a class="scroll-hint" href="#invitation"><span data-t="scroll">Ба поён гузаред</span><i></i></a>
+      </div>
+    </header>
+
+    <section class="section greeting" id="invitation">
+      <svg class="leaf-top" viewBox="0 0 190 230" fill="none" stroke="#a3a18a" stroke-width="1.1" aria-hidden="true"><path d="M14 223C68 155 70 76 128 0"/><path d="M57 158C24 139 13 115 20 99c27 4 40 24 37 59ZM79 117c-29-18-27-47-16-61 19 15 27 35 16 61ZM107 62C88 43 92 19 103 7c15 22 17 37 4 55ZM71 139c10-36 32-47 57-48-8 26-23 42-57 48ZM90 95c14-30 31-40 52-39-10 24-27 36-52 39Z"/><path d="M30 198c-25-7-33-24-30-42 22 8 30 20 30 42Z"/></svg>
+      <div class="eyebrow reveal" data-t="greetingLabel">Даъватнома</div>
+      <div class="ornament reveal"><span class="symbol">❧</span></div>
+      <h2 class="reveal" data-t="dear">Пайвандон ва дӯстони азиз!</h2>
+      <p class="salute reveal" data-t="invitationAccent">Дар зиндагии мо рӯзи фархундае фаро мерасад.</p>
+      <p class="copy reveal" data-t="invitationCopy">Шуморо бо камоли эҳтиром ба тӯйи арӯсии худ даъват мекунем. Хушҳол мешавем, агар дар ин рӯзи пурсаодат бо мо бошед. Ҳузур ва дуои неки шумо ба ҷашни мо файз мебахшад.</p>
+      <div class="signature reveal" data-t="signature">Бо муҳаббат, Асадбек ва Севара</div>
+      <svg class="leaf-bottom" viewBox="0 0 190 230" fill="none" stroke="#a3a18a" stroke-width="1.1" aria-hidden="true"><path d="M14 223C68 155 70 76 128 0"/><path d="M57 158C24 139 13 115 20 99c27 4 40 24 37 59ZM79 117c-29-18-27-47-16-61 19 15 27 35 16 61ZM107 62C88 43 92 19 103 7c15 22 17 37 4 55ZM71 139c10-36 32-47 57-48-8 26-23 42-57 48ZM90 95c14-30 31-40 52-39-10 24-27 36-52 39Z"/></svg>
+    </section>
+
+    <div class="feature-photo">
+      <div class="feature-text"><em data-t="photoQuote">Як муҳаббат.<br>Ду тақдир.</em><small data-t="photoCaption">Оғози роҳи муштараки мо</small></div>
+    </div>
+
+    <section class="section date-section" id="date">
+      <div class="eyebrow reveal" data-t="dateLabel">Ин санаро дар хотир нигоҳ доред</div>
+      <h2 class="reveal" data-t="dateTitle">Санаи тӯй</h2>
+      <div class="ornament reveal"><span class="symbol">✧</span></div>
+      <div class="date-hero reveal"><div class="day">26</div><div class="date-side"><div class="month" data-t="month">Декабр</div><div class="year">2026</div></div></div>
+      <div class="weekday reveal" data-t="weekday">Шанбе</div>
+      <div class="calendar reveal" data-label="calendarLabel" aria-label="Декабри 2026, рӯзи тӯй 26 декабр">
+        <div class="calendar-top" id="calendar-head"></div>
+        <div class="calendar-days" id="calendar-days"></div>
+      </div>
+    </section>
+
+    <section class="section venue-section" id="place">
+      <div class="eyebrow reveal" data-t="venueLabel">Ҷойи баргузорӣ</div>
+      <h2 class="reveal" data-t="venueTitle">Шуморо дар ҷашнамон интизорем</h2>
+      <div class="ornament reveal"><span class="symbol">❦</span></div>
+      <div class="venue-name reveal" data-t="venueTba">Ҷойи баргузории ҷашн</div>
+      <div class="venue-sub reveal" data-t="venueDescription">Нишониро баъдтар хабар медиҳем.</div>
+      <a class="venue-action reveal" id="map-link" aria-disabled="true"><span data-t="mapButton">Пайванди харита баъдтар илова мешавад</span><span aria-hidden="true">↗</span></a>
+      <div class="venue-img"><div class="corner-note" data-t="venuePhoto">Ҷашни арӯсӣ</div></div>
+    </section>
+
+    <section class="section program" id="program">
+      <div class="eyebrow reveal" data-t="programLabel">Рӯзи тӯй</div>
+      <h2 class="reveal" data-t="programTitle">Барномаи тӯй</h2>
+      <div class="ornament reveal"><span class="symbol">✧</span></div>
+      <div class="timeline">
+        <div class="timeline-item reveal"><time class="timeline-num" datetime="08:00">08:00</time><div class="timeline-rail"><div class="timeline-dot"></div><div class="timeline-rule"></div></div><div class="timeline-copy"><h3 data-t="step1">Оши наҳор</h3></div></div>
+        <div class="timeline-item reveal"><time class="timeline-num" datetime="12:00">12:00</time><div class="timeline-rail"><div class="timeline-dot"></div><div class="timeline-rule"></div></div><div class="timeline-copy"><h3 data-t="step2">Сабти давлатии ақди никоҳ</h3></div></div>
+        <div class="timeline-item reveal"><time class="timeline-num" datetime="16:00">16:00</time><div class="timeline-rail"><div class="timeline-dot"></div><div class="timeline-rule"></div></div><div class="timeline-copy"><h3 data-t="step3">Ҷашни арӯсӣ</h3></div></div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="little reveal" data-t="quoteLabel">Дар бораи хушбахтӣ</div>
+      <blockquote class="reveal" data-t="bigQuote">Вақте шодиро бо азизонат тақсим мекунӣ, хушбахтӣ бештар мешавад.</blockquote>
+      <div class="divider-spark reveal">✧</div>
+    </section>
+
+    <section class="section countdown-section" id="countdown">
+      <div class="eyebrow reveal" data-t="countdownLabel">Дар интизори ҷашн</div>
+      <h2 class="reveal" data-t="countdownTitle">То оғози ҷашни арӯсӣ</h2>
+      <div class="ornament reveal"><span class="symbol">♡</span></div>
+      <div class="counters reveal" role="timer" data-label="timerLabel" aria-label="Вақти боқимонда то ҷашни арӯсӣ">
+        <div class="counter"><span class="number" id="days">00</span><span class="counter-label" data-t="days">рӯз</span></div>
+        <div class="counter"><span class="number" id="hours">00</span><span class="counter-label" data-t="hours">соат</span></div>
+        <div class="counter"><span class="number" id="minutes">00</span><span class="counter-label" data-t="minutes">дақиқа</span></div>
+        <div class="counter"><span class="number" id="seconds">00</span><span class="counter-label" data-t="seconds">сония</span></div>
+      </div>
+    </section>
+
+    <section class="section rsvp" id="rsvp">
+      <div class="eyebrow reveal" data-t="rsvpLabel">Тасдиқи ҳузур</div>
+      <h2 class="reveal" data-t="rsvpTitle">Оё ба тӯй меоед?</h2>
+      <div class="ornament reveal"><span class="symbol">❧</span></div>
+      <p class="copy reveal" data-t="rsvpDesc">Хушҳол мешавем, агар ба мо хабар диҳед, ки дар тӯй иштирок карда метавонед ё не.</p>
+      <form class="form reveal" id="rsvp-form">
+        <label class="field-label" for="guest-name" data-t="formName">Ному насаби шумо</label>
+        <input class="field" id="guest-name" name="guestName" maxlength="90" required placeholder="Ному насабатонро нависед" autocomplete="name" />
+        <div class="field-label" data-t="formAttend">Оё меоед?</div>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="attend" value="yes" required /><span data-t="attendYes">Бо камоли майл меоям!</span></label>
+          <label class="choice"><input type="radio" name="attend" value="no" /><span data-t="attendNo">Мутаассифона, омада наметавонам</span></label>
+        </div>
+        <label class="field-label" for="guest-message" data-t="wishes">Таманниёти шумо (ихтиёрӣ)</label>
+        <textarea class="field" id="guest-message" name="wishes" maxlength="700" placeholder="Таманниёти худро нависед"></textarea>
+        <button class="form-submit" type="submit" data-t="formSubmit">Омода кардани ҷавоб</button>
+        <p class="form-note" data-t="formNote">Ҷавобро нусха бардошта, ба ташкилкунандагон фиристед.</p>
+        <div class="form-result" id="form-result" aria-live="polite">
+          <h3 data-t="resultTitle">Ҷавоби шумо омода аст ♡</h3>
+          <p data-t="resultDesc">Матнро нусха бардошта, ба ташкилкунандагон фиристед.</p>
+          <div class="prepared-message" id="prepared-message"></div>
+          <button class="copy-response" type="button" id="copy-response" data-t="copyButton">Нусха бардоштани ҷавоб</button>
+        </div>
+      </form>
+    </section>
+
+    <footer class="final-section">
+      <div class="monogram" aria-hidden="true">A <i>&</i> S</div>
+      <div class="farewell" data-t="farewell">Бо муҳаббат<br>интизори шумоем!</div>
+      <div class="footer-date" data-t="footerDate">26 ДЕКАБРИ 2026</div>
+      <div class="footer-line"></div>
+      <div class="footer-small">Asadbek & Sevara</div>
+    </footer>
+  </main>
+
+  <audio id="wedding-music" preload="none" loop src="assets/ketma-qol.mp3"></audio>
+  <button type="button" class="music-control" id="music-toggle"><span aria-hidden="true">♫</span><span id="music-label">Мусиқиро гузоред</span></button>
+  <div class="music-status" id="music-status" role="status"></div>
+
+  <script>
+    // Все данные для быстрой замены собраны здесь.
+    const CONFIG = {
+      eventDate: '2026-12-26T16:00:00+05:00', // Начало свадебного торжества
+      venueName: '',                          // например: Ресторан «..."
+      venueAddress: '',                       // адрес ресторана
+      mapsUrl: '',                            // ссылка Google Maps / Яндекс Карты
+      rsvpEndpoint: ''                         // адрес API для сохранения ответов (по желанию)
+    };
+    const t = {
+      "tg": {
+        "topLabel": "Қиссаи муҳаббати мо",
+        "heroEyebrow": "Даъватнома ба тӯй",
+        "nameA": "Асадбек",
+        "nameB": "Севара",
+        "heroDate": "26 · 12 · 2026",
+        "heroQuote": "Оғози зиндагии муштараки мо",
+        "scroll": "Ба поён гузаред",
+        "greetingLabel": "Даъватнома",
+        "dear": "Пайвандон ва дӯстони азиз!",
+        "invitationAccent": "Дар зиндагии мо рӯзи фархундае фаро мерасад.",
+        "invitationCopy": "Шуморо бо камоли эҳтиром ба тӯйи арӯсии худ даъват мекунем. Хушҳол мешавем, агар дар ин рӯзи пурсаодат бо мо бошед. Ҳузур ва дуои неки шумо ба ҷашни мо файз мебахшад.",
+        "signature": "Бо муҳаббат, Асадбек ва Севара",
+        "photoQuote": "Як муҳаббат.<br>Ду тақдир.",
+        "photoCaption": "Оғози роҳи муштараки мо",
+        "dateLabel": "Ин санаро дар хотир нигоҳ доред",
+        "dateTitle": "Санаи тӯй",
+        "month": "Декабр",
+        "weekday": "Шанбе",
+        "week": [
+          "Дш",
+          "Сш",
+          "Чш",
+          "Пш",
+          "Ҷм",
+          "Шб",
+          "Яш"
+        ],
+        "venueLabel": "Ҷойи баргузорӣ",
+        "venueTitle": "Шуморо дар ҷашнамон интизорем",
+        "venueTba": "Ҷойи баргузории ҷашн",
+        "venueDescription": "Нишониро баъдтар хабар медиҳем.",
+        "mapButton": "Пайванди харита баъдтар илова мешавад",
+        "mapReady": "Дидан дар харита",
+        "venuePhoto": "Ҷашни арӯсӣ",
+        "venueTime": "Оғоз соати",
+        "programLabel": "Рӯзи тӯй",
+        "programTitle": "Барномаи тӯй",
+        "step1": "Оши наҳор",
+        "step2": "Сабти давлатии ақди никоҳ",
+        "step3": "Ҷашни арӯсӣ",
+        "quoteLabel": "Дар бораи хушбахтӣ",
+        "bigQuote": "Вақте шодиро бо азизонат тақсим мекунӣ, хушбахтӣ бештар мешавад.",
+        "countdownLabel": "Дар интизори ҷашн",
+        "countdownTitle": "То оғози ҷашни арӯсӣ",
+        "days": "рӯз",
+        "hours": "соат",
+        "minutes": "дақиқа",
+        "seconds": "сония",
+        "rsvpLabel": "Тасдиқи ҳузур",
+        "rsvpTitle": "Оё ба тӯй меоед?",
+        "rsvpDesc": "Хушҳол мешавем, агар ба мо хабар диҳед, ки дар тӯй иштирок карда метавонед ё не.",
+        "formName": "Ному насаби шумо",
+        "formNamePlaceholder": "Ному насабатонро нависед",
+        "formAttend": "Оё меоед?",
+        "attendYes": "Бо камоли майл меоям!",
+        "attendNo": "Мутаассифона, омада наметавонам",
+        "wishes": "Таманниёти шумо (ихтиёрӣ)",
+        "wishesPlaceholder": "Таманниёти худро нависед",
+        "formSubmit": "Омода кардани ҷавоб",
+        "formNote": "Ҷавобро нусха бардошта, ба ташкилкунандагон фиристед.",
+        "resultTitle": "Ҷавоби шумо омода аст ♡",
+        "resultDesc": "Матнро нусха бардошта, ба ташкилкунандагон фиристед.",
+        "copyButton": "Нусха бардоштани ҷавоб",
+        "copied": "Нусха бардошта шуд ✓",
+        "sentTitle": "Ташаккур! Ҷавоб фиристода шуд ♡",
+        "sentDesc": "Ҷавоби шуморо гирифтем. То дидор!",
+        "farewell": "Бо муҳаббат<br>интизори шумоем!",
+        "footerDate": "26 ДЕКАБРИ 2026",
+        "responseHeading": "Ҷавоб ба даъватномаи Асадбек ва Севара",
+        "responseName": "Ному насаб",
+        "responseAttend": "Иштирок",
+        "responseWish": "Таманниёт",
+        "responseYes": "Меоям",
+        "responseNo": "Омада наметавонам",
+        "sendError": "Ҷавоб фиристода нашуд. Лутфан, онро нусха бардоред.",
+        "sideLeft": "Рӯзи ҷашни мо",
+        "sideRight": "26 декабри 2026",
+        "languageLabel": "Интихоби забон",
+        "calendarLabel": "Декабри 2026, рӯзи тӯй 26 декабр",
+        "calendarDay": "26 декабр, рӯзи тӯй",
+        "timerLabel": "Вақти боқимонда то ҷашни арӯсӣ",
+        "musicPlay": "Мусиқиро гузоред",
+        "musicPause": "Мусиқиро боздоред",
+        "musicError": "Мусиқӣ пахш нашуд. Дубора кӯшиш кунед.",
+        "pageTitle": "Асадбек ва Севара | 26 декабри 2026",
+        "pageDescription": "Даъватнома ба тӯйи Асадбек ва Севара. 26 декабри соли 2026."
+      },
+      "uz": {
+        "topLabel": "Bizning sevgi hikoyamiz",
+        "heroEyebrow": "Nikoh to‘yiga taklifnoma",
+        "nameA": "Asadbek",
+        "nameB": "Sevara",
+        "heroDate": "26 · 12 · 2026",
+        "heroQuote": "Yangi hikoyamizning boshlanishi",
+        "scroll": "Pastga suring",
+        "greetingLabel": "Taklifnoma",
+        "dear": "Aziz yaqinlarimiz<br>va do‘stlarimiz!",
+        "invitationAccent": "Hayotimizdagi eng unutilmas kun yaqinlashmoqda...",
+        "invitationCopy": "Sizlarni nikoh to‘yimizga chin qalbimizdan taklif etamiz! Ushbu baxtli kunni biz uchun eng aziz insonlar bilan birga o‘tkazishni istaymiz. Sizning tashrifingiz, tabassumingiz va samimiy tilaklaringiz bayramimizga o‘zgacha fayz bag‘ishlaydi.",
+        "signature": "Mehr bilan, Asadbek va Sevara",
+        "photoQuote": "Bir muhabbat.<br>Ikki taqdir.",
+        "photoCaption": "Birgalikdagi yo‘limizning boshlanishi",
+        "dateLabel": "Sanani yodda saqlang",
+        "dateTitle": "To‘y sanasi",
+        "month": "Dekabr",
+        "weekday": "Shanba",
+        "week": [
+          "Du",
+          "Se",
+          "Ch",
+          "Pa",
+          "Ju",
+          "Sh",
+          "Ya"
+        ],
+        "venueLabel": "To‘y manzili",
+        "venueTitle": "Sizni bayramimizda<br>kutamiz",
+        "venueTba": "To‘y bazmi o‘tkaziladigan joy",
+        "venueDescription": "Manzilni keyinroq ma’lum qilamiz.",
+        "mapButton": "Xarita havolasi keyin qo‘shiladi",
+        "mapReady": "Xaritada ko‘rish",
+        "venuePhoto": "To‘y bazmi",
+        "venueTime": "Boshlanish vaqti",
+        "programLabel": "Bizning kunimiz",
+        "programTitle": "Bayram<br>dasturi",
+        "step1": "Nahor oshi",
+        "step2": "Nikohni rasmiy ro‘yxatdan o‘tkazish",
+        "step3": "To‘y bazmi",
+        "quoteLabel": "Eng muhimi",
+        "bigQuote": "Baxt — uni yaqinlaringiz bilan baham ko‘rganingizda yanada ortadi.",
+        "countdownLabel": "Baxtli kunimizni kutib",
+        "countdownTitle": "To‘y bazmi boshlanishiga",
+        "days": "kun",
+        "hours": "soat",
+        "minutes": "daqiqa",
+        "seconds": "soniya",
+        "rsvpLabel": "Tasdiqlash",
+        "rsvpTitle": "Biz bilan<br>bo‘lasizmi?",
+        "rsvpDesc": "Shu kuni biz bilan birga bo‘la olishingizni bilishdan xursand bo‘lamiz.",
+        "formName": "Ism va familiyangiz",
+        "formNamePlaceholder": "Ismingizni yozing",
+        "formAttend": "To‘yga kelasizmi?",
+        "attendYes": "Albatta kelaman!",
+        "attendNo": "Afsuski, kela olmayman",
+        "wishes": "Tilaklaringiz (ixtiyoriy)",
+        "wishesPlaceholder": "Ezgu tilaklaringizni yozing...",
+        "formSubmit": "Javobni tayyorlash",
+        "formNote": "Javobni nusxalab, tashkilotchilarga yuboring.",
+        "resultTitle": "Javobingiz tayyor ♡",
+        "resultDesc": "Matnni nusxalab, tashkilotchilarga yuboring.",
+        "copyButton": "Javobni nusxalash",
+        "copied": "Nusxalandi ✓",
+        "sentTitle": "Rahmat! Javob yuborildi ♡",
+        "sentDesc": "Javobingiz qabul qilindi. Ko‘rishguncha!",
+        "farewell": "Sizni mehr bilan<br>kutamiz!",
+        "footerDate": "26 DEKABR 2026",
+        "responseHeading": "Asadbek va Sevara taklifiga javob",
+        "responseName": "Ism",
+        "responseAttend": "Ishtirok",
+        "responseWish": "Tilaklar",
+        "responseYes": "Kelaman",
+        "responseNo": "Kela olmayman",
+        "sendError": "Javob yuborilmadi. Matnni nusxalang.",
+        "sideLeft": "To‘y kunimiz",
+        "sideRight": "26-dekabr, 2026-yil",
+        "languageLabel": "Til tanlash",
+        "calendarLabel": "2026-yil dekabr, to‘y kuni 26-dekabr",
+        "calendarDay": "26-dekabr, to‘y kuni",
+        "timerLabel": "To‘y bazmi boshlanishigacha qolgan vaqt",
+        "musicPlay": "Musiqani yoqish",
+        "musicPause": "Musiqani to‘xtatish",
+        "musicError": "Musiqa ijro etilmadi. Qayta urinib ko‘ring.",
+        "pageTitle": "Asadbek va Sevara | 26-dekabr, 2026-yil",
+        "pageDescription": "Asadbek va Sevaraning to‘yiga taklifnoma. 2026-yil 26-dekabr."
+      }
+    };
+    let lang = 'tg';
+    const qs = s => document.querySelector(s);
+    function applyLocale(newLang) {
+      lang = newLang;
+      document.documentElement.lang = newLang;
+      document.title = t[lang].pageTitle;
+      qs('meta[name="description"]').content = t[lang].pageDescription;
+      document.querySelectorAll('[data-label]').forEach(el => el.setAttribute('aria-label', t[lang][el.dataset.label]));
+      qs('#calendar-days .active').setAttribute('aria-label', t[lang].calendarDay);
+      updateMusicLabel();
+      qs('#music-status').textContent = '';
+      document.querySelectorAll('[data-t]').forEach(el => { const key = el.dataset.t; if (t[lang][key]) el.innerHTML = t[lang][key]; });
+      document.querySelectorAll('[data-lang]').forEach(el => el.setAttribute('aria-pressed', String(el.dataset.lang === lang)));
+      qs('#guest-name').placeholder = t[lang].formNamePlaceholder;
+      qs('#guest-message').placeholder = t[lang].wishesPlaceholder;
+      qs('#calendar-head').innerHTML = t[lang].week.map(day=>`<span>${day}</span>`).join('');
+      renderVenue();
+      if(qs('#form-result').classList.contains('show')) qs('#prepared-message').textContent = messageText();
+    }
+    function renderCalendar() {
+      const firstWeekday = (new Date(2026,11,1).getDay()+6)%7;
+      const spans = [];
+      for(let i=0;i<firstWeekday;i++) spans.push('<span aria-hidden="true"></span>');
+      for(let n=1;n<=31;n++) spans.push(`<span ${n===26?'class="active" aria-current="date"':''}>${n}</span>`);
+      qs('#calendar-days').innerHTML=spans.join('');
+    }
+    function renderVenue() {
+      const x=t[lang];
+      const venue=qs('.venue-name');
+      const desc=qs('.venue-sub');
+      const map=qs('#map-link');
+      venue.textContent=CONFIG.venueName || x.venueTba;
+      desc.textContent = CONFIG.venueAddress || x.venueDescription;
+      if(CONFIG.mapsUrl && /^https:\/\//.test(CONFIG.mapsUrl)) {
+        map.href=CONFIG.mapsUrl; map.target='_blank'; map.rel='noopener noreferrer'; map.removeAttribute('aria-disabled');
+      } else { map.removeAttribute('href'); map.setAttribute('aria-disabled','true'); }
+      map.querySelector('span').textContent=(CONFIG.mapsUrl ? x.mapReady : x.mapButton);
+    }
+    function tick() {
+      const delta=Math.max(0,new Date(CONFIG.eventDate).getTime()-Date.now());
+      const d=Math.floor(delta/86400000), h=Math.floor(delta/3600000)%24, m=Math.floor(delta/60000)%60, s=Math.floor(delta/1000)%60;
+      qs('#days').textContent=String(d).padStart(2,'0');
+      qs('#hours').textContent=String(h).padStart(2,'0');
+      qs('#minutes').textContent=String(m).padStart(2,'0');
+      qs('#seconds').textContent=String(s).padStart(2,'0');
+    }
+    function messageText() {
+      const x=t[lang];
+      const name=qs('#guest-name').value.trim();
+      const status=qs('input[name="attend"]:checked')?.value;
+      const wish=qs('#guest-message').value.trim();
+      return `${x.responseHeading}\n${x.responseName}: ${name}\n${x.responseAttend}: ${status==='yes'?x.responseYes:x.responseNo}${wish?'\n'+x.responseWish+': '+wish:''}`;
+    }
+    function prepareResponse() {
+      const result=qs('#form-result');
+      qs('#prepared-message').textContent=messageText();
+      result.classList.add('show');
+      result.scrollIntoView({behavior:'smooth',block:'nearest'});
+    }
+    document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>applyLocale(button.dataset.lang)));
+    qs('#rsvp-form').addEventListener('submit',async event=>{
+      event.preventDefault();
+      if(!qs('#rsvp-form').reportValidity()) return;
+      if(CONFIG.rsvpEndpoint && /^https:\/\//.test(CONFIG.rsvpEndpoint)) {
+        const form=qs('#rsvp-form');
+        const button=form.querySelector('[type="submit"]');
+        button.disabled=true;
+        try {
+          const response=await fetch(CONFIG.rsvpEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:qs('#guest-name').value.trim(),attending:qs('input[name="attend"]:checked').value,wishes:qs('#guest-message').value.trim(),event:'Асадбек и Севара — 26.12.2026'})});
+          if(!response.ok) throw new Error('Request failed');
+          const r=qs('#form-result'); r.classList.add('show');
+          r.querySelector('h3').textContent=t[lang].sentTitle;
+          r.querySelector('p').textContent=t[lang].sentDesc;
+          qs('#prepared-message').hidden=true;
+          qs('#copy-response').hidden=true;
+          r.scrollIntoView({behavior:'smooth',block:'nearest'});
+        } catch(error) { prepareResponse(); qs('#form-result p').textContent=t[lang].sendError; }
+        finally { button.disabled=false; }
+      } else prepareResponse();
+    });
+    qs('#copy-response').addEventListener('click',async()=>{
+      const str=messageText();
+      try { await navigator.clipboard.writeText(str); }
+      catch { const input=document.createElement('textarea');input.value=str;document.body.append(input);input.select();document.execCommand('copy');input.remove(); }
+      const btn=qs('#copy-response');btn.textContent=t[lang].copied;
+      setTimeout(()=>btn.textContent=t[lang].copyButton,2400);
+    });
+    const music = qs('#wedding-music');
+    function updateMusicLabel() {
+      qs('#music-label').textContent = music.paused ? t[lang].musicPlay : t[lang].musicPause;
+    }
+    music.addEventListener('play', updateMusicLabel);
+    music.addEventListener('pause', updateMusicLabel);
+    qs('#music-toggle').addEventListener('click', async () => {
+      qs('#music-status').textContent = '';
+      if (!music.paused) {
+        music.pause();
+        return;
+      }
+      try {
+        await music.play();
+      } catch (error) {
+        if (error.name !== 'AbortError') qs('#music-status').textContent = t[lang].musicError;
+      }
+    });
+
+    renderCalendar();
+    applyLocale(new URLSearchParams(location.search).get('lang') === 'uz' ? 'uz' : 'tg');
+    tick();
+    setInterval(tick, 1000);
+    document.documentElement.classList.add('js');
+    if('IntersectionObserver' in window) {
+      const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{ if(entry.isIntersecting){entry.target.classList.add('is-visible');observer.unobserve(entry.target);} }),{threshold:.08,rootMargin:'0px 0px 20px 0px'});
+      document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+    } else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('is-visible'));
+  </script>
+</body>
+</html>
