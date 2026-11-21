@@ -87,9 +87,8 @@
     .venue-section { background:#f9f6f0; padding-bottom:0; }
     .venue-section .venue-name { font:italic 33px var(--serif); margin:30px auto 6px; color:#7c6f65; }
     .venue-section .venue-sub { font-size:12px; color:#95897e; line-height:1.8; }
-    .venue-section .venue-action { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:15px 23px; border:1px solid #bca89a; background:none; color:#806c62; text-decoration:none; font-size:10px; letter-spacing:.2em; text-transform:uppercase; margin:30px auto 56px; transition:background .2s,color .2s; }
+    .venue-section .venue-action { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:15px 23px; border:1px solid #bca89a; background:none; color:#806c62; text-decoration:none; font-size:11px; letter-spacing:.1em; text-transform:uppercase; margin:24px auto 56px; transition:background .2s,color .2s; }
     .venue-section .venue-action[href]:hover { background:#806c62; color:white; }
-    .venue-section .venue-action:not([href]) { opacity:.65; cursor:default; }
     .venue-img { margin:0 -35px; height:345px; background:#a79b8a; position:relative; overflow:hidden; }
     .venue-img:before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1100&q=85') center/cover; filter:saturate(.75); }
     .venue-img:after { content:''; position:absolute; inset:0; background:#4c45332b; }
@@ -126,15 +125,13 @@
     .choice { display:flex; align-items:center; gap:11px; cursor:pointer; font-size:12px; color:#645a51; }
     .choice input { appearance:none; width:17px; height:17px; border:1px solid #ad9385; border-radius:50%; flex:0 0 17px; display:grid; place-items:center; background:transparent; margin:0; }
     .choice input:checked:after { content:''; display:block; width:7px; height:7px; border-radius:50%; background:#9a7367; }
-    .form-submit,.copy-response { width:100%; border:0; background:#76675e; color:#fff; padding:20px; text-align:center; font-size:10px; text-transform:uppercase; letter-spacing:.23em; transition:background .2s; }
-    .form-submit:hover,.copy-response:hover { background:#9a7367; }
-    .form-note { font-size:10px; color:#93867c; line-height:1.75; margin:14px 0 0; text-align:center; }
-    .form-result { display:none; text-align:center; margin-top:20px; border:1px solid #bda99a; background:#f6f1e9; padding:23px; }
-    .form-result.show { display:block; }
-    .form-result h3 { font:italic 27px var(--serif); margin:0 0 10px; }
-    .form-result p { font-size:11px; color:#766a61; line-height:1.75; }
-    .prepared-message { text-align:left; white-space:pre-wrap; line-height:1.65; font-size:11px; color:#65584d; padding:15px; background:white; margin:14px 0; overflow-wrap:anywhere; }
-    .copy-response { padding:15px; }
+    .form-submit { width:100%; min-height:48px; display:flex; align-items:center; justify-content:center; gap:10px; border:0; background:#76675e; color:#fff; padding:16px; text-align:center; font-size:12px; text-transform:uppercase; letter-spacing:.13em; transition:background .2s; }
+    .form-submit:not(:disabled):hover { background:#8a6457; }
+    .form-submit:disabled { cursor:default; opacity:.66; }
+    .form-result { margin-top:16px; text-align:center; border:1px solid #bda99a; background:#f6f1e9; padding:15px; font-size:13px; line-height:1.55; }
+    .form-result:not(.show) { position:absolute; width:1px; height:1px; padding:0; overflow:hidden; clip-path:inset(50%); }
+    .form-result[data-state="sent"] { color:#385445; border-color:#a5b6a5; background:#eef2eb; }
+    .form-result[data-state="error"] { color:#813c34; }
     .final-section { min-height:465px; background:#f8f4ed; padding:102px 25px 80px; text-align:center; position:relative; }
     .final-section .monogram { display:inline-flex; align-items:center; justify-content:center; width:115px; height:115px; border:1px solid #c4b09d; border-radius:50%; font:italic 38px var(--serif); color:#aa8575; margin-bottom:38px; }
     .final-section .monogram i { font-size:.52em; padding:0 4px; }
@@ -167,7 +164,7 @@
       .js .motion-photo.is-visible::before { animation:photo-settle 1.6s var(--motion-ease) both; }
       .js .motion-photo.is-visible .feature-text { animation:arrive .85s var(--motion-ease) both; }
       .js .calendar.is-visible .active { animation:calendar-mark .75s var(--motion-ease) .22s both; }
-      .music-control[data-playing="true"] [aria-hidden] { animation:music-note .45s var(--motion-ease); }
+      .music-control[data-playing="true"] .music-pause { animation:music-note .45s var(--motion-ease); }
 
       @keyframes arrive { from { opacity:0; transform:translateY(15px); } to { opacity:1; transform:translateY(0); } }
       @keyframes hero-photo { from { transform:scale(1.065); } to { transform:scale(1.01); } }
@@ -196,6 +193,9 @@
     @media (max-width:365px) { .hero-middle .intro { letter-spacing:.25em; } .date-hero .day { font-size:100px; } .date-side .month { font-size:27px; } .counters { gap:0; } .counter .number { font-size:41px; } }
     @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
     .music-control { position:fixed; inset:auto max(20px,env(safe-area-inset-right)) max(20px,env(safe-area-inset-bottom)) auto; z-index:10; display:flex; gap:8px; align-items:center; min-height:44px; padding:8px 15px; border:1px solid #f7eee2; border-radius:24px; background:#625348; color:#fff; font-size:13px; box-shadow:0 3px 18px #392c2038; }
+    .icon { width:19px; height:19px; flex:0 0 19px; vertical-align:middle; }
+    .music-control .music-pause, .music-control[data-playing="true"] .music-note { display:none; }
+    .music-control[data-playing="true"] .music-pause { display:block; }
     .music-status { position:fixed; right:20px; bottom:calc(max(20px,env(safe-area-inset-bottom)) + 49px); z-index:10; max-width:240px; padding:6px 10px; border-radius:8px; background:#625348; color:#fff; font-size:13px; }
     .music-status:empty { display:none; }
     .footer-small { padding-bottom:14px; }
@@ -259,9 +259,9 @@
       <div class="eyebrow reveal" data-t="venueLabel">Ҷойи баргузорӣ</div>
       <h2 class="reveal" data-t="venueTitle">Шуморо дар ҷашнамон интизорем</h2>
       <div class="ornament reveal"><span class="symbol">❦</span></div>
-      <div class="venue-name reveal" data-t="venueTba">Ҷойи баргузории ҷашн</div>
-      <div class="venue-sub reveal" data-t="venueDescription">Нишониро баъдтар хабар медиҳем.</div>
-      <a class="venue-action reveal" id="map-link" aria-disabled="true"><span data-t="mapButton">Пайванди харита баъдтар илова мешавад</span><span aria-hidden="true">↗</span></a>
+      <div class="venue-name reveal" data-t="venueName">Тарабхонаи ҷашни арӯсӣ</div>
+      <div class="venue-sub reveal">40.162724, 69.490921</div>
+      <a class="venue-action reveal" id="map-link" href="https://yandex.ru/maps?whatshere%5Bzoom%5D=14&amp;whatshere%5Bpoint%5D=69.490921,40.162724&amp;si=bqm04ppfdve4g5ajjx2a53392r" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-t="mapButton">Кушодан дар Яндекс Харитаҳо</span></a>
       <div class="venue-img motion-photo"><div class="corner-note" data-t="venuePhoto">Ҷашни арӯсӣ</div></div>
     </section>
 
@@ -299,7 +299,7 @@
       <h2 class="reveal" data-t="rsvpTitle">Оё ба тӯй меоед?</h2>
       <div class="ornament reveal"><span class="symbol">❧</span></div>
       <p class="copy reveal" data-t="rsvpDesc">Хушҳол мешавем, агар ба мо хабар диҳед, ки дар тӯй иштирок карда метавонед ё не.</p>
-      <form class="form reveal" id="rsvp-form">
+      <form class="form reveal" id="rsvp-form" method="post" action="/api/rsvp">
         <label class="field-label" for="guest-name" data-t="formName">Ному насаби шумо</label>
         <input class="field" id="guest-name" name="guestName" maxlength="90" required placeholder="Ному насабатонро нависед" autocomplete="name" />
         <div class="field-label" data-t="formAttend">Оё меоед?</div>
@@ -309,14 +309,8 @@
         </div>
         <label class="field-label" for="guest-message" data-t="wishes">Таманниёти шумо (ихтиёрӣ)</label>
         <textarea class="field" id="guest-message" name="wishes" maxlength="700" placeholder="Таманниёти худро нависед"></textarea>
-        <button class="form-submit" type="submit" data-t="formSubmit">Омода кардани ҷавоб</button>
-        <p class="form-note" data-t="formNote">Ҷавобро нусха бардошта, ба ташкилкунандагон фиристед.</p>
-        <div class="form-result" id="form-result" aria-live="polite">
-          <h3 data-t="resultTitle">Ҷавоби шумо омода аст ♡</h3>
-          <p data-t="resultDesc">Матнро нусха бардошта, ба ташкилкунандагон фиристед.</p>
-          <div class="prepared-message" id="prepared-message"></div>
-          <button class="copy-response" type="button" id="copy-response" data-t="copyButton">Нусха бардоштани ҷавоб</button>
-        </div>
+        <button class="form-submit" type="submit"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 2-7 20-4-9-9-4 20-7ZM22 2 11 13"/></svg><span data-t="formSubmit">Фиристодани ҷавоб</span></button>
+        <div class="form-result" id="form-result" role="status" aria-live="polite"></div>
       </form>
     </section>
 
@@ -330,18 +324,11 @@
   </main>
 
   <audio id="wedding-music" preload="none" loop src="assets/ketma-qol.mp3"></audio>
-  <button type="button" class="music-control" id="music-toggle"><span aria-hidden="true">♫</span><span id="music-label">Мусиқиро гузоред</span></button>
+  <button type="button" class="music-control" id="music-toggle"><svg class="icon music-note" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5l11-2v13M9 9l11-2"/><ellipse cx="6" cy="18" rx="3" ry="2"/><ellipse cx="17" cy="16" rx="3" ry="2"/></svg><svg class="icon music-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5v14m6-14v14"/></svg><span id="music-label">Мусиқиро гузоред</span></button>
   <div class="music-status" id="music-status" role="status"></div>
 
   <script>
-    // Все данные для быстрой замены собраны здесь.
-    const CONFIG = {
-      eventDate: '2026-12-26T16:00:00+05:00', // Начало свадебного торжества
-      venueName: '',                          // например: Ресторан «..."
-      venueAddress: '',                       // адрес ресторана
-      mapsUrl: '',                            // ссылка Google Maps / Яндекс Карты
-      rsvpEndpoint: ''                         // адрес API для сохранения ответов (по желанию)
-    };
+    const eventDate = '2026-12-26T16:00:00+05:00';
     const t = {
       "tg": {
         "topLabel": "Қиссаи муҳаббати мо",
@@ -373,12 +360,8 @@
         ],
         "venueLabel": "Ҷойи баргузорӣ",
         "venueTitle": "Шуморо дар ҷашнамон интизорем",
-        "venueTba": "Ҷойи баргузории ҷашн",
-        "venueDescription": "Нишониро баъдтар хабар медиҳем.",
-        "mapButton": "Пайванди харита баъдтар илова мешавад",
-        "mapReady": "Дидан дар харита",
+        "mapButton": "Кушодан дар Яндекс Харитаҳо",
         "venuePhoto": "Ҷашни арӯсӣ",
-        "venueTime": "Оғоз соати",
         "programLabel": "Рӯзи тӯй",
         "programTitle": "Барномаи тӯй",
         "step1": "Нахор",
@@ -402,23 +385,12 @@
         "attendNo": "Мутаассифона, омада наметавонам",
         "wishes": "Таманниёти шумо (ихтиёрӣ)",
         "wishesPlaceholder": "Таманниёти худро нависед",
-        "formSubmit": "Омода кардани ҷавоб",
-        "formNote": "Ҷавобро нусха бардошта, ба ташкилкунандагон фиристед.",
-        "resultTitle": "Ҷавоби шумо омода аст ♡",
-        "resultDesc": "Матнро нусха бардошта, ба ташкилкунандагон фиристед.",
-        "copyButton": "Нусха бардоштани ҷавоб",
-        "copied": "Нусха бардошта шуд ✓",
-        "sentTitle": "Ташаккур! Ҷавоб фиристода шуд ♡",
-        "sentDesc": "Ҷавоби шуморо гирифтем. То дидор!",
+        "formSubmit": "Фиристодани ҷавоб",
+        "sentTitle": "Ташаккур! Ҷавоб фиристода шуд",
+        "sentDesc": "Ҷавоби шуморо гирифтем.",
         "farewell": "Бо муҳаббат<br>интизори шумоем!",
         "footerDate": "26 ДЕКАБРИ 2026",
-        "responseHeading": "Ҷавоб ба даъватномаи Асадбек ва Севара",
-        "responseName": "Ному насаб",
-        "responseAttend": "Иштирок",
-        "responseWish": "Таманниёт",
-        "responseYes": "Меоям",
-        "responseNo": "Омада наметавонам",
-        "sendError": "Ҷавоб фиристода нашуд. Лутфан, онро нусха бардоред.",
+        "sendError": "Ҷавоб фиристода нашуд. Лутфан, дубора кӯшиш кунед.",
         "sideLeft": "Рӯзи ҷашни мо",
         "sideRight": "26 декабри 2026",
         "languageLabel": "Интихоби забон",
@@ -429,7 +401,9 @@
         "musicPause": "Мусиқиро боздоред",
         "musicError": "Мусиқӣ пахш нашуд. Дубора кӯшиш кунед.",
         "pageTitle": "Асадбек ва Севара | 26 декабри 2026",
-        "pageDescription": "Даъватнома ба тӯйи Асадбек ва Севара. 26 декабри соли 2026."
+        "pageDescription": "Даъватнома ба тӯйи Асадбек ва Севара. 26 декабри соли 2026.",
+        "venueName": "Тарабхонаи ҷашни арӯсӣ",
+        "sending": "Ҷавоб фиристода мешавад…"
       },
       "uz": {
         "topLabel": "Bizning sevgi hikoyamiz",
@@ -461,12 +435,8 @@
         ],
         "venueLabel": "To‘y manzili",
         "venueTitle": "Sizni bayramimizda<br>kutamiz",
-        "venueTba": "To‘y bazmi o‘tkaziladigan joy",
-        "venueDescription": "Manzilni keyinroq ma’lum qilamiz.",
-        "mapButton": "Xarita havolasi keyin qo‘shiladi",
-        "mapReady": "Xaritada ko‘rish",
+        "mapButton": "Yandex Xaritalarda ochish",
         "venuePhoto": "To‘y bazmi",
-        "venueTime": "Boshlanish vaqti",
         "programLabel": "Bizning kunimiz",
         "programTitle": "Bayram<br>dasturi",
         "step1": "Нахор",
@@ -490,23 +460,12 @@
         "attendNo": "Afsuski, kela olmayman",
         "wishes": "Tilaklaringiz (ixtiyoriy)",
         "wishesPlaceholder": "Ezgu tilaklaringizni yozing...",
-        "formSubmit": "Javobni tayyorlash",
-        "formNote": "Javobni nusxalab, tashkilotchilarga yuboring.",
-        "resultTitle": "Javobingiz tayyor ♡",
-        "resultDesc": "Matnni nusxalab, tashkilotchilarga yuboring.",
-        "copyButton": "Javobni nusxalash",
-        "copied": "Nusxalandi ✓",
-        "sentTitle": "Rahmat! Javob yuborildi ♡",
-        "sentDesc": "Javobingiz qabul qilindi. Ko‘rishguncha!",
+        "formSubmit": "Javobni yuborish",
+        "sentTitle": "Rahmat! Javob yuborildi",
+        "sentDesc": "Javobingizni qabul qildik.",
         "farewell": "Sizni mehr bilan<br>kutamiz!",
         "footerDate": "26 DEKABR 2026",
-        "responseHeading": "Asadbek va Sevara taklifiga javob",
-        "responseName": "Ism",
-        "responseAttend": "Ishtirok",
-        "responseWish": "Tilaklar",
-        "responseYes": "Kelaman",
-        "responseNo": "Kela olmayman",
-        "sendError": "Javob yuborilmadi. Matnni nusxalang.",
+        "sendError": "Javob yuborilmadi. Iltimos, qayta urinib ko‘ring.",
         "sideLeft": "To‘y kunimiz",
         "sideRight": "26-dekabr, 2026-yil",
         "languageLabel": "Til tanlash",
@@ -517,7 +476,9 @@
         "musicPause": "Musiqani to‘xtatish",
         "musicError": "Musiqa ijro etilmadi. Qayta urinib ko‘ring.",
         "pageTitle": "Asadbek va Sevara | 26-dekabr, 2026-yil",
-        "pageDescription": "Asadbek va Sevaraning to‘yiga taklifnoma. 2026-yil 26-dekabr."
+        "pageDescription": "Asadbek va Sevaraning to‘yiga taklifnoma. 2026-yil 26-dekabr.",
+        "venueName": "To‘y bazmi restorani",
+        "sending": "Javob yuborilmoqda…"
       }
     };
     let lang = 'tg';
@@ -536,8 +497,7 @@
       qs('#guest-name').placeholder = t[lang].formNamePlaceholder;
       qs('#guest-message').placeholder = t[lang].wishesPlaceholder;
       qs('#calendar-head').innerHTML = t[lang].week.map(day=>`<span>${day}</span>`).join('');
-      renderVenue();
-      if(qs('#form-result').classList.contains('show')) qs('#prepared-message').textContent = messageText();
+      renderFormStatus();
     }
     function renderCalendar() {
       const firstWeekday = (new Date(2026,11,1).getDay()+6)%7;
@@ -546,66 +506,71 @@
       for(let n=1;n<=31;n++) spans.push(`<span ${n===26?'class="active" aria-current="date"':''}>${n}</span>`);
       qs('#calendar-days').innerHTML=spans.join('');
     }
-    function renderVenue() {
-      const x=t[lang];
-      const venue=qs('.venue-name');
-      const desc=qs('.venue-sub');
-      const map=qs('#map-link');
-      venue.textContent=CONFIG.venueName || x.venueTba;
-      desc.textContent = CONFIG.venueAddress || x.venueDescription;
-      if(CONFIG.mapsUrl && /^https:\/\//.test(CONFIG.mapsUrl)) {
-        map.href=CONFIG.mapsUrl; map.target='_blank'; map.rel='noopener noreferrer'; map.removeAttribute('aria-disabled');
-      } else { map.removeAttribute('href'); map.setAttribute('aria-disabled','true'); }
-      map.querySelector('span').textContent=(CONFIG.mapsUrl ? x.mapReady : x.mapButton);
-    }
     function tick() {
-      const delta=Math.max(0,new Date(CONFIG.eventDate).getTime()-Date.now());
+      const delta=Math.max(0,new Date(eventDate).getTime()-Date.now());
       const d=Math.floor(delta/86400000), h=Math.floor(delta/3600000)%24, m=Math.floor(delta/60000)%60, s=Math.floor(delta/1000)%60;
       qs('#days').textContent=String(d).padStart(2,'0');
       qs('#hours').textContent=String(h).padStart(2,'0');
       qs('#minutes').textContent=String(m).padStart(2,'0');
       qs('#seconds').textContent=String(s).padStart(2,'0');
     }
-    function messageText() {
-      const x=t[lang];
-      const name=qs('#guest-name').value.trim();
-      const status=qs('input[name="attend"]:checked')?.value;
-      const wish=qs('#guest-message').value.trim();
-      return `${x.responseHeading}\n${x.responseName}: ${name}\n${x.responseAttend}: ${status==='yes'?x.responseYes:x.responseNo}${wish?'\n'+x.responseWish+': '+wish:''}`;
+    let formStatus = '';
+    let lastSubmission;
+    const form = qs('#rsvp-form');
+    const submitButton = form.querySelector('[type="submit"]');
+    const guestFields = form.querySelectorAll('input, textarea');
+
+    function renderFormStatus() {
+      const status = qs('#form-result');
+      status.classList.toggle('show', Boolean(formStatus));
+      status.dataset.state = formStatus;
+      const copy = t[lang];
+      const messages = {
+        sending: copy.sending,
+        sent: copy.sentTitle + '. ' + copy.sentDesc,
+        error: copy.sendError
+      };
+      status.textContent = messages[formStatus] ?? '';
     }
-    function prepareResponse() {
-      const result=qs('#form-result');
-      qs('#prepared-message').textContent=messageText();
-      result.classList.add('show');
-      result.scrollIntoView({block:'nearest'});
-    }
-    document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>applyLocale(button.dataset.lang)));
-    qs('#rsvp-form').addEventListener('submit',async event=>{
-      event.preventDefault();
-      if(!qs('#rsvp-form').reportValidity()) return;
-      if(CONFIG.rsvpEndpoint && /^https:\/\//.test(CONFIG.rsvpEndpoint)) {
-        const form=qs('#rsvp-form');
-        const button=form.querySelector('[type="submit"]');
-        button.disabled=true;
-        try {
-          const response=await fetch(CONFIG.rsvpEndpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name:qs('#guest-name').value.trim(),attending:qs('input[name="attend"]:checked').value,wishes:qs('#guest-message').value.trim(),event:'Асадбек и Севара — 26.12.2026'})});
-          if(!response.ok) throw new Error('Request failed');
-          const r=qs('#form-result'); r.classList.add('show');
-          r.querySelector('h3').textContent=t[lang].sentTitle;
-          r.querySelector('p').textContent=t[lang].sentDesc;
-          qs('#prepared-message').hidden=true;
-          qs('#copy-response').hidden=true;
-          r.scrollIntoView({block:'nearest'});
-        } catch(error) { prepareResponse(); qs('#form-result p').textContent=t[lang].sendError; }
-        finally { button.disabled=false; }
-      } else prepareResponse();
+
+    document.querySelectorAll('[data-lang]').forEach(button => {
+      button.addEventListener('click', () => applyLocale(button.dataset.lang));
     });
-    qs('#copy-response').addEventListener('click',async()=>{
-      const str=messageText();
-      try { await navigator.clipboard.writeText(str); }
-      catch { const input=document.createElement('textarea');input.value=str;document.body.append(input);input.select();document.execCommand('copy');input.remove(); }
-      const btn=qs('#copy-response');btn.textContent=t[lang].copied;
-      setTimeout(()=>btn.textContent=t[lang].copyButton,2400);
+    form.addEventListener('submit', async event => {
+      event.preventDefault();
+      if (formStatus === 'sending' || formStatus === 'sent') return;
+      const values = new FormData(form);
+      const fields = {
+        name: values.get('guestName').trim(),
+        attending: values.get('attend'),
+        wishes: values.get('wishes').trim()
+      };
+      if (!fields.name) {
+        qs('#guest-name').focus();
+        return;
+      }
+
+      submitButton.disabled = true;
+      guestFields.forEach(field => { field.disabled = true; });
+      formStatus = 'sending';
+      renderFormStatus();
+      try {
+        const key = JSON.stringify(fields);
+        if (key !== lastSubmission?.key) lastSubmission = { key, id: crypto.randomUUID() };
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: lastSubmission.id, ...fields })
+        });
+        if (!response.ok || !(await response.json()).ok) throw new Error('RSVP was not saved');
+        formStatus = 'sent';
+      } catch {
+        formStatus = 'error';
+        submitButton.disabled = false;
+        guestFields.forEach(field => { field.disabled = false; });
+      }
+      renderFormStatus();
+      qs('#form-result').scrollIntoView({ block: 'nearest' });
     });
     const music = qs('#wedding-music');
     function updateMusicLabel() {
