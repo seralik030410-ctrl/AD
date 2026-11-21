@@ -87,7 +87,8 @@
     .venue-section { background:#f9f6f0; padding-bottom:0; }
     .venue-section .venue-name { font:italic 33px var(--serif); margin:30px auto 6px; color:#7c6f65; }
     .venue-section .venue-sub { font-size:12px; color:#95897e; line-height:1.8; }
-    .venue-section .venue-action { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:15px 23px; border:1px solid #bca89a; background:none; color:#806c62; text-decoration:none; font-size:11px; letter-spacing:.1em; text-transform:uppercase; margin:24px auto 56px; transition:background .2s,color .2s; }
+    .venue-actions { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin:24px auto 56px; }
+    .venue-section .venue-action { display:inline-flex; align-items:center; justify-content:center; gap:9px; padding:13px 15px; border:1px solid #bca89a; background:none; color:#806c62; text-decoration:none; font-size:11px; letter-spacing:.1em; text-transform:uppercase; transition:background .2s,color .2s; }
     .venue-section .venue-action[href]:hover { background:#806c62; color:white; }
     .venue-img { margin:0 -35px; height:345px; background:#a79b8a; position:relative; overflow:hidden; }
     .venue-img:before { content:''; position:absolute; inset:0; background:url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=1100&q=85') center/cover; filter:saturate(.75); }
@@ -261,7 +262,10 @@
       <div class="ornament reveal"><span class="symbol">❦</span></div>
       <div class="venue-name reveal" data-t="venueName">Тарабхонаи ҷашни арӯсӣ</div>
       <div class="venue-sub reveal">40.162724, 69.490921</div>
-      <a class="venue-action reveal" id="map-link" href="https://yandex.ru/maps?whatshere%5Bzoom%5D=14&amp;whatshere%5Bpoint%5D=69.490921,40.162724&amp;si=bqm04ppfdve4g5ajjx2a53392r" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-t="mapButton">Кушодан дар Яндекс Харитаҳо</span></a>
+      <div class="venue-actions reveal">
+        <a class="venue-action" id="map-link" href="https://yandex.ru/maps?whatshere%5Bzoom%5D=14&amp;whatshere%5Bpoint%5D=69.490921,40.162724&amp;si=bqm04ppfdve4g5ajjx2a53392r" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><span data-t="mapButton">Яндекс Харитаҳо</span></a>
+        <a class="venue-action" href="https://www.openstreetmap.org/?mlat=40.162724&amp;mlon=69.490921#map=17/40.162724/69.490921" target="_blank" rel="noopener noreferrer"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 6 6-3 6 3 6-3v15l-6 3-6-3-6 3V6Zm6-3v15m6-12v15"/></svg><span>OpenStreetMap</span></a>
+      </div>
       <div class="venue-img motion-photo"><div class="corner-note" data-t="venuePhoto">Ҷашни арӯсӣ</div></div>
     </section>
 
@@ -360,7 +364,7 @@
         ],
         "venueLabel": "Ҷойи баргузорӣ",
         "venueTitle": "Шуморо дар ҷашнамон интизорем",
-        "mapButton": "Кушодан дар Яндекс Харитаҳо",
+        "mapButton": "Яндекс Харитаҳо",
         "venuePhoto": "Ҷашни арӯсӣ",
         "programLabel": "Рӯзи тӯй",
         "programTitle": "Барномаи тӯй",
@@ -435,7 +439,7 @@
         ],
         "venueLabel": "To‘y manzili",
         "venueTitle": "Sizni bayramimizda<br>kutamiz",
-        "mapButton": "Yandex Xaritalarda ochish",
+        "mapButton": "Yandex Xaritalar",
         "venuePhoto": "To‘y bazmi",
         "programLabel": "Bizning kunimiz",
         "programTitle": "Bayram<br>dasturi",
